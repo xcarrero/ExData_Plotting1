@@ -34,9 +34,11 @@ ds$Sub_metering_2 <- as.numeric(ds$Sub_metering_2)
 ds$Sub_metering_3 <- as.numeric(ds$Sub_metering_3)
 
 # Plot
-png(filename="plot1.png")
-hist(ds$Global_active_power,
-     main="Global Active Power", 
-     xlab="Global Active Power (kilowatts)", 
-     col="red")
+png(filename="plot2.png")
+plot(x=ds$Time,
+     y=ds$Global_active_power,
+     type="n",
+     xlab="",
+     ylab="Global Active Power (kilowatts)")
+lines(ds$Time,ds$Global_active_power)
 dev.off()
